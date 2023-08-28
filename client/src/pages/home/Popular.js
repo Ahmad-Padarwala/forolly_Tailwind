@@ -12,7 +12,7 @@ const Popular = () => {
   }, []);
   const getPopulatProduct = () => {
     axios
-      .get(`${PORT}product/1/4`)
+      .get(`${PORT}product/1/3`)
       .then((response) => {
         setPopularProduct(response.data);
       })
