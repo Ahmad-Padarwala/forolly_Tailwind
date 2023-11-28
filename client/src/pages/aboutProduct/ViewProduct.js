@@ -1,30 +1,34 @@
 import React, { useState, useEffect } from "react";
 import "../../assets/css/forolly.css";
 import axios from "axios";
-import { useLocation, NavLink } from "react-router-dom";
+import { NavLink, useParams, useNavigate } from "react-router-dom";
 import ShimerUi from "../components/ShimerUi";
-import PORT from "../../assets/constant/Url";
+const PORT = process.env.REACT_APP_MYURL;
 
 const ViewProduct = () => {
-  const location = useLocation();
-  const [prodId, setProdId] = useState(location.state.id);
+  const navigate = useNavigate();
   const [aboutProduct, setAboutProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [openTab, setOpenTab] = useState(1);
   const [getNutrition, setGetNutrition] = useState([]);
   const [limitProduct, setLimitProduct] = useState([]);
+  const { title } = useParams();
 
   useEffect(() => {
     fetchAboutProduct();
     fetchProductLimitdata();
-    fetchNutritionData();
-  }, [prodId]);
+  }, [title]);
+  useEffect(() => {
+    if (aboutProduct && Object.keys(aboutProduct).length > 0) {
+      fetchNutritionData();
+    }
+  }, [aboutProduct]);
 
   //GET PRODUCT DATA WITH PRODUCT ID
   const fetchAboutProduct = () => {
     setIsLoading(true);
     axios
-      .get(`${PORT}product/${prodId}/6`)
+      .get(`${PORT}getViewProductData/${title}`)
       .then((response) => {
         setAboutProduct(response.data[0]);
         setIsLoading(false);
@@ -35,29 +39,36 @@ const ViewProduct = () => {
       });
   };
   const fetchNutritionData = () => {
+    setIsLoading(true);
     axios
-      .get(`${PORT}nutrition/${prodId}`)
+      .get(`${PORT}nutrition/${aboutProduct.prod_id}`)
       .then((response) => {
         setGetNutrition(response.data[0]);
+        setIsLoading(false);
       })
       .catch(() => {
         console.log("Error View Data in Nutrition page");
+        setIsLoading(false);
       });
   };
 
   const fetchProductLimitdata = () => {
+    setIsLoading(true);
     axios
       .get(`${PORT}product/1/4`)
       .then((response) => {
         setLimitProduct(response.data);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log("Error fetching Product data in Brand.js:", error);
+        setIsLoading(false);
       });
   };
 
-  const handleWatchProduct = (ID) => {
-    setProdId(ID);
+  const handleWatchProduct = (title) => {
+    // setProdId(title);
+    navigate(`/products/aboutproduct/${title}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -65,7 +76,7 @@ const ViewProduct = () => {
     <>
       {isLoading ? (
         <div
-          className="w-11/12 mx-auto lg:flex block px-4 py-10"
+          className="lg:w-11/12 w-full mx-auto lg:flex block lg:px-4 px-0 py-10"
           style={{ textAlign: "-webkit-center" }}
         >
           <div className="w-3/6">
@@ -89,7 +100,7 @@ const ViewProduct = () => {
         </div>
       ) : (
         <div
-          className="w-11/12 mx-auto lg:flex block px-4 py-10"
+          className="lg:w-11/12 w-full mx-auto lg:flex block lg:px-4 px-0 py-10"
           style={{ textAlign: "-webkit-center" }}
         >
           <div className="lg:w-3/6 md:w-3/4 w-full">
@@ -97,7 +108,7 @@ const ViewProduct = () => {
               {aboutProduct.image && (
                 <img
                   className="prod-img"
-                  src={require(`../../assets/image/upload/${aboutProduct.image}`)}
+                  src={`./upload/${aboutProduct.image}`}
                   alt="productImages"
                 />
               )}
@@ -350,29 +361,86 @@ const ViewProduct = () => {
 
       <div className="w-full lg:px-12 md:px-12 mt-10">
         <div className="text-center product-item flex flex-wrap">
-          {limitProduct.map((product) => (
-            <div className="product-items mb-10" key={product.prod_id}>
-              <div className="product-all text-center">
-                <div
-                  className="items-center bg-productItemBg rounded-full cursor-pointer flex justify-center relative"
-                  id="product-main"
-                  onClick={() => {
-                    handleWatchProduct(product.prod_id);
-                  }}
-                >
-                  {product.image && (
-                    <img
-                      className="prod-img"
-                      src={require(`../../assets/image/upload/${product.image}`)}
-                      alt="productImage"
-                      width="100px"
-                    />
-                  )}
+          {isLoading ? (
+            <>
+              <div className="product-items mb-10">
+                <div className="product-all text-center">
+                  <div
+                    className="items-center rounded-full cursor-pointer flex justify-center relative"
+                    id="product-main"
+                  >
+                    <ShimerUi height={220} width={220} borderRadius={200} />
+                  </div>
+                  <p className="font-bold tracking-widest flex justify-center mt-2">
+                    <ShimerUi height={15} width={150} />
+                  </p>
                 </div>
-                <p className="font-bold tracking-widest">{product.title}</p>
               </div>
-            </div>
-          ))}
+              <div className="product-items mb-10">
+                <div className="product-all text-center">
+                  <div
+                    className="items-center rounded-full cursor-pointer flex justify-center relative"
+                    id="product-main"
+                  >
+                    <ShimerUi height={220} width={220} borderRadius={200} />
+                  </div>
+                  <p className="font-bold tracking-widest flex justify-center mt-2">
+                    <ShimerUi height={15} width={150} />
+                  </p>
+                </div>
+              </div>
+              <div className="product-items mb-10">
+                <div className="product-all text-center">
+                  <div
+                    className="items-center rounded-full cursor-pointer flex justify-center relative"
+                    id="product-main"
+                  >
+                    <ShimerUi height={220} width={220} borderRadius={200} />
+                  </div>
+                  <p className="font-bold tracking-widest flex justify-center mt-2">
+                    <ShimerUi height={15} width={150} />
+                  </p>
+                </div>
+              </div>
+              <div className="product-items mb-10">
+                <div className="product-all text-center">
+                  <div
+                    className="items-center rounded-full cursor-pointer flex justify-center relative"
+                    id="product-main"
+                  >
+                    <ShimerUi height={220} width={220} borderRadius={200} />
+                  </div>
+                  <p className="font-bold tracking-widest flex justify-center mt-2">
+                    <ShimerUi height={15} width={150} />
+                  </p>
+                </div>
+              </div>
+            </>
+          ) : (
+            limitProduct.map((product) => (
+              <div className="product-items mb-10" key={product.prod_id}>
+                <div className="product-all text-center">
+                  <div
+                    className="items-center bg-productItemBg rounded-full cursor-pointer flex justify-center relative"
+                    id="product-main"
+                    onClick={() => {
+                      handleWatchProduct(product.title);
+                    }}
+                  >
+                    {product.image && (
+                      <img
+                        className="prod-img"
+                        src={`./upload/${product.image}`}
+                        alt="productImage"
+                        width="100px"
+                      />
+                    )}
+                  </div>
+                  <p className="font-bold tracking-widest">{product.title}</p>
+                </div>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </>

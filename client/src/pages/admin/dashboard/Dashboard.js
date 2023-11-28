@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../../assets/css/style.css";
 import axios from "axios";
-import PORT from "../../../assets/constant/Url";
+const PORT = process.env.REACT_APP_MYURL;
 
 const Dashboard = () => {
   const [contactCount, setContactCount] = useState(0);

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate, NavLink } from "react-router-dom";
 import axios from "axios";
-import PORT from "../../../assets/constant/Url";
 import DeleteModal from "../component/DeleteModal";
+const PORT = process.env.REACT_APP_MYURL;
 
 const ViewNutrition = () => {
   const location = useLocation();

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-import PORT from "../../../assets/constant/Url";
+const PORT = process.env.REACT_APP_MYURL;
 
 const EditNutrition = () => {
   const location = useLocation();

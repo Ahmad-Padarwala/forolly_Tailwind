@@ -10,12 +10,12 @@ const Welcome = () => {
         </div>
 
         <div className="lg:w-6/12 md:ps-16 ps-8 pe-4">
-          <p className="mb-6 text-balck text-2xl">Welcome to</p>
-          <p className="text-5xl font-bold text-red">
+          <p className="mb-2 text-balck text-2xl">Welcome to</p>
+          <p className="text-5xl font-bold text-red font-montserrat">
             <span className="border-red border-b border-b-2 pb-2">FO</span>
             ROLLY
           </p>
-          <p className="md:w-8/12 mt-12 leading-7">
+          <p className="md:w-8/12 mt-10 leading-7">
             <span className="font-semibold">‘Forolly’</span> was established in
             Nov 2020. From the snapshot of its creation, the organization put
             the majority of its undertakings to lead the best portrayal of the

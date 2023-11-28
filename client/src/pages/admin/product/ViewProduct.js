@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import axios from "axios";
-import PORT from "../../../assets/constant/Url";
+const PORT = process.env.REACT_APP_MYURL;
 
 const ViewProduct = () => {
   const location = useLocation();
@@ -124,7 +124,7 @@ const ViewProduct = () => {
               <div>
                 {viewProdData.image && (
                   <img
-                    src={require(`../../../assets/image/upload/${viewProdData.image}`)}
+                    src={`./upload/${viewProdData.image}`}
                     alt="productImage"
                     width="100px"
                   />

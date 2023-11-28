@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
 import DeleteModal from "../component/DeleteModal";
-import PORT from "../../../assets/constant/Url";
+const PORT = process.env.REACT_APP_MYURL;
 
 const Product = () => {
   const [prodData, setProdData] = useState([]);
@@ -27,6 +27,7 @@ const Product = () => {
       .get(`${PORT}product`)
       .then((response) => {
         setProdData(response.data);
+        console.log(response.data);
       })
       .catch((error) => {
         console.log("Error fetching Product data in Brand.js:", error);
@@ -202,7 +203,7 @@ const Product = () => {
                         >
                           {product.image && (
                             <img
-                              src={require(`../../../assets/image/upload/${product.image}`)}
+                              src={`./upload/${product.image}`}
                               alt="product_image"
                               width="90px"
                               height="auto"

@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Slider from "./Slider";
 import History from "./History";
 import Service from "./Service";
 import Popular from "./Popular";
@@ -10,6 +11,7 @@ const index = () => {
   return (
     <>
       <Navbar />
+      <Slider />
       <History />
       <Service />
       <Popular />

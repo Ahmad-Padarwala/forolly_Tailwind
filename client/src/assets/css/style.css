@@ -1,3 +1,7 @@
+body {
+  font-family: "Raleway", sans-serif;
+}
+
 /* INQUIRY PAGES CSS */
 .inquiry-welcome {
   background-image: url("../image/inq-bg.svg");
@@ -109,20 +113,44 @@ input::placeholder {
 }
 
 /* DASHBOARD COMPONENT CSS */
-/* ===== Google Font Import - Poppins ===== */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
 .sidebar {
   width: 250px;
-  font-family: "Poppins", sans-serif;
 }
 .dashboard {
   left: 250px;
   width: calc(100% - 250px);
-  font-family: "Poppins", sans-serif;
 }
 .boxes {
   border-radius: 12px;
   width: calc(100% / 3 - 15px);
   padding: 35px 0px;
   transition: all 0.5s ease;
+}
+.slick-track {
+  display: contents !important;
+}
+
+/* top home page slider */
+.slide {
+  width: 100%;
+  transition: opacity 0.3s ease-in-out;
+}
+.slide img {
+  width: 100%;
+}
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  color: black;
+  padding: 8px 19px;
+  border-radius: 50%;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.next {
+  position: absolute;
+  top: 50%;
+  right: 0;
 }

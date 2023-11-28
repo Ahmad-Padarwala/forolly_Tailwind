@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import PORT from "../../assets/constant/Url";
+const PORT = process.env.REACT_APP_MYURL;
 
 const Form = () => {
   const [addContact, setAddContact] = useState({
@@ -122,7 +122,7 @@ const Form = () => {
     <>
       <div className="mx-auto rounded-lg shadow-amber-700 ">
         <div className="flex flex-col lg:flex-row text-white">
-          <div className="lg:w-4/12 rounded-lg shadow-amber-700 cont-info-main p-4">
+          <div className="lg:w-4/12 rounded-lg shadow-amber-700 cont-info-main px-4 py-8">
             <p className="font-semibold text-2xl ps-4">Contact Information</p>
             <div className="mt-5 flex">
               <div>
@@ -178,7 +178,7 @@ const Form = () => {
             </div>
           </div>
 
-          <div className="lg:w-8/12 text-dark p-4">
+          <div className="lg:w-8/12 text-dark lg:px-8 px-4 py-8">
             <form method="post" onSubmit={saveContactData}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
                 <div>

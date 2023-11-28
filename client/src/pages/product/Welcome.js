@@ -12,8 +12,8 @@ const Welcome = () => {
           className="lg:w-2/6 md:w-4/6 w-full lg:ps-0 md:ps-0 ps-8"
           id="welcome-texts"
         >
-          <p className="text-lg mb-8">Welcome to our</p>
-          <p className="text-red text-4xl font-extrabold">
+          <p className="text-lg mb-2">Welcome to our</p>
+          <p className="text-red text-4xl font-extrabold font-montserrat">
             <span className="border-red border-b border-b-4 pb-2">FO</span>
             ROLLY
           </p>

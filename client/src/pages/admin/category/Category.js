@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import DeleteModal from "../component/DeleteModal";
-import PORT from "../../../assets/constant/Url";
+const PORT = process.env.REACT_APP_MYURL;
 
 const Category = () => {
   const [cateData, setCateData] = useState([]);
@@ -116,7 +116,7 @@ const Category = () => {
                         >
                           {category.image && (
                             <img
-                              src={require(`../../../assets/image/upload/${category.image}`)}
+                              src={`./upload/${category.image}`}
                               alt="category_image"
                               width="90px"
                               height="auto"

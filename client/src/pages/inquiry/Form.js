@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import PORT from "../../assets/constant/Url";
+const PORT = process.env.REACT_APP_MYURL;
 
 const Form = () => {
   const [inquiryData, setInquiryData] = useState({
@@ -211,7 +211,7 @@ const Form = () => {
 
   return (
     <>
-      <div className="lg:w-3/4 w-full mx-auto my-12 lg:px-8 sm:px-6 px-4 lg:py-16 md:py-16 py-12 rounded-lg inquiry-form">
+      <div className="lg:w-3/4 w-11/12 mx-auto my-12 lg:px-8 sm:px-6 px-4 lg:py-12 md:py-16 py-12 rounded-lg inquiry-form">
         <form onSubmit={saveInquiryData}>
           <div className="mb-5">
             <span id="nameErr" className="text-red font-bold"></span>

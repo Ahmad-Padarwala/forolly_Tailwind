@@ -197,10 +197,31 @@ const editProduct = (req, res) => {
   }
 };
 
+const getSliderProduct = (req, res) => {
+  const sql = "SELECT * FROM product WHERE status=1 AND slider=1";
+  connection.query(sql, (error, result) => {
+    if (error) {
+      console.log("Error Getting Data Product Table in server.js" + error);
+    }
+    return res.json(result);
+  });
+};
+
+const getViewProductData = (req, res) => {
+  const { title } = req.params;
+  const sql = `SELECT * FROM product WHERE status=1 AND title='${title}'`;
+  connection.query(sql, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+};
+
 module.exports = {
   getProduct,
   addProduct,
   deleteProduct,
   getEditProduct,
   editProduct,
+  getSliderProduct,
+  getViewProductData,
 };

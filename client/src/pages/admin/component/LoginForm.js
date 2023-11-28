@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import "../../../assets/css/style.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
-import PORT from "../../../assets/constant/Url";
+const PORT = process.env.REACT_APP_MYURL;
 
 const LoginForm = () => {
   const navigate = useNavigate();

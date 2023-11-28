@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DeleteModal from "../component/DeleteModal";
 import ShimerUi from "../../components/ShimerUi";
-import PORT from "../../../assets/constant/Url";
+const PORT = process.env.REACT_APP_MYURL;
 
 const Brand = () => {
   const [brandData, setBrandData] = useState([]);
@@ -226,7 +226,7 @@ const Brand = () => {
                         >
                           {brand.image && (
                             <img
-                              src={require(`../../../assets/image/upload/${brand.image}`)}
+                              src={`./upload/${brand.image}`}
                               alt="brand_logo"
                               width="115px"
                             />

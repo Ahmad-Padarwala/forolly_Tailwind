@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DeleteModal from "../component/DeleteModal";
-import PORT from "../../../assets/constant/Url";
+const PORT = process.env.REACT_APP_MYURL;
 
 const Contact = () => {
   const [getContact, setGetContact] = useState([]);

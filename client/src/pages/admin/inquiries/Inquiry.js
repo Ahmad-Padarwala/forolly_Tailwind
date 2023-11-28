@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DeleteModal from "../component/DeleteModal";
 import { useNavigate } from "react-router-dom";
-import PORT from "../../../assets/constant/Url";
+const PORT = process.env.REACT_APP_MYURL;
 
 const Inquiry = () => {
   const [getInquiry, setGetInquiry] = useState([]);

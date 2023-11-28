@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate, NavLink } from "react-router-dom";
 import axios from "axios";
 import ShimerUi from "../../components/ShimerUi";
-import PORT from "../../../assets/constant/Url";
+const PORT = process.env.REACT_APP_MYURL;
 
 const EditCategory = () => {
   const [loading, setLoading] = useState(false);

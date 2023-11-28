@@ -1,6 +1,5 @@
 .navbar {
   background-image: repeating-linear-gradient(60deg, #931518, #851316 73%);
-  font-family: "Raleway", Helvetica, Arial, Lucida, sans-serif;
   padding: 27px 0px;
   min-height: 80px;
 }
@@ -51,7 +50,7 @@
 @media screen and (max-width: 1024px) {
   .navbar-collapse {
     display: none;
-    transition: all 0.3s ease;
+    transition: all 2s ease;
   }
   .navbar.open .navbar-collapse {
     display: block !important;
@@ -99,16 +98,22 @@
 
 /* HOME PAGE CSS */
 
-.left-history_peregraph {
+.left-history_paragraph {
   background-image: url("../../assets/image/strawberry.webp");
+}
+.left-history_paragraph p.tracking-wider,
+.service-title p.tracking-wider,
+.popular-product div p.text-red,
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
 }
 .choose-icons {
   color: #5a3737;
 }
 .card-main {
-  box-shadow: 6px 6px 18px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   width: 350px;
-  height: 250px;
+  height: fit-content;
 }
 
 .card-icon {
@@ -124,7 +129,7 @@
     width: auto;
   }
   .card-section {
-    padding: 0px 10px;
+    padding: 0px 10px 23px 10px;
   }
 }
 
@@ -140,7 +145,7 @@
   width: 180px;
   color: #000000 !important;
   font-size: 14px;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
 }
 
 .testi-slider-main {
@@ -172,6 +177,11 @@
   }
   .item {
     width: 50%;
+  }
+  .footer_top_desc {
+    text-align: justify;
+    line-height: 1.5rem;
+    letter-spacing: 0.5px;
   }
 }
 /* ABOUT PAGE CSS */
@@ -220,11 +230,9 @@
 }
 .view-prod-title {
   color: #90241f;
-  font-family: "Poppins", Helvetica, Arial, Lucida, sans-serif;
   border-bottom: 1px solid #90241f;
 }
 .prod-short-desc {
-  font-family: "Montserrat", Helvetica, Arial, Lucida, sans-serif;
   color: #666;
 }
 .view-prod-btn {
@@ -239,7 +247,6 @@
   border: 2px solid;
   border-radius: 45px;
   font-size: 16px;
-  font-family: "Allerta", Helvetica, Arial, Lucida, sans-serif !important;
   background-image: repeating-radial-gradient(
     circle at bottom left,
     #8e0700 0%,
@@ -291,7 +298,6 @@
 }
 
 .prod-review-text {
-  font-family: Open Sans, Arial, sans-serif;
   font-size: 14px;
   color: #666;
   background-color: #fff;
@@ -327,7 +333,6 @@
 }
 
 .reiew-label {
-  font-family: Open Sans, Arial, sans-serif;
   font-size: 14px;
   color: #666;
   line-height: 1.7em;
@@ -389,7 +394,6 @@
 /* FOOTER COMPONENT CSS */
 .footer-btn {
   border: 1px solid #bd0a01;
-  font-family: "Montserrat", Helvetica, Arial, Lucida, sans-serif !important;
   transition: all 0.2s linear 0s;
 }
 .footer-btn:before {
@@ -434,4 +438,14 @@
   #product-main {
     margin: 0 auto;
   }
+  .choose_us_section {
+    justify-content: left;
+    margin-left: 26%;
+    position: relative;
+    top: 0px !important;
+  }
+}
+.choose_us_section {
+  position: relative;
+  top: 15px;
 }

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 // import ProductItem from "./ProductItem";
-import PORT from "../../assets/constant/Url";
 import ShimerUi from "../components/ShimerUi";
 import { useNavigate } from "react-router-dom";
+const PORT = process.env.REACT_APP_MYURL;
 
 const Product = () => {
   const [productData, setProductData] = useState([]);
@@ -28,18 +28,18 @@ const Product = () => {
       });
   };
 
-  const handleWatchProduct = (prodId) => {
-    navigate("/products/aboutproduct", {
-      state: { id: prodId },
-    });
+  const handleWatchProduct = (title) => {
+    navigate(`/products/aboutproduct/${title}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
     <>
       <div className="text-center lg:px-60 md:px-40 sm:px-20 px-8 px-0 my-12">
-        <p className="text-xl mb-5">Our</p>
-        <p className="text-red text-4xl font-extrabold mb-5">PRODUCTS</p>
-        <p>
+        <p className="text-xl mb-2">Our</p>
+        <p className="text-red text-4xl font-extrabold mb-5 font-montserrat">
+          PRODUCTS
+        </p>
+        <p className="md:text-center text-justify">
           Your content goes here. Edit or remove this text inline or in the
           module Content settings. You can also style every aspect of this
           content in the module Design settings and even apply custom CSS to
@@ -49,37 +49,86 @@ const Product = () => {
 
       <div className="w-full lg:px-12 md:px-12 mt-10">
         <div className="text-center product-item flex flex-wrap">
-          {productData.map((product) => (
-            <div className="product-items mb-10" key={product.prod_id}>
-              <div className="product-all text-center">
-                <div
-                  className="items-center bg-productItemBg rounded-full cursor-pointer flex justify-center relative"
-                  id="product-main"
-                  onClick={() => {
-                    handleWatchProduct(product.prod_id);
-                  }}
-                >
-                  {isLoading ? (
-                    <ShimerUi height={230} width={230} borderRadius={130} />
-                  ) : (
-                    product.image && (
+          {isLoading ? (
+            <>
+              <div className="product-items mb-10">
+                <div className="product-all text-center">
+                  <div
+                    className="items-center rounded-full cursor-pointer flex justify-center relative"
+                    id="product-main"
+                  >
+                    <ShimerUi height={220} width={220} borderRadius={200} />
+                  </div>
+                  <p className="font-bold tracking-widest flex justify-center mt-2">
+                    <ShimerUi height={15} width={150} />
+                  </p>
+                </div>
+              </div>
+              <div className="product-items mb-10">
+                <div className="product-all text-center">
+                  <div
+                    className="items-center rounded-full cursor-pointer flex justify-center relative"
+                    id="product-main"
+                  >
+                    <ShimerUi height={220} width={220} borderRadius={200} />
+                  </div>
+                  <p className="font-bold tracking-widest flex justify-center mt-2">
+                    <ShimerUi height={15} width={150} />
+                  </p>
+                </div>
+              </div>
+              <div className="product-items mb-10">
+                <div className="product-all text-center">
+                  <div
+                    className="items-center rounded-full cursor-pointer flex justify-center relative"
+                    id="product-main"
+                  >
+                    <ShimerUi height={220} width={220} borderRadius={200} />
+                  </div>
+                  <p className="font-bold tracking-widest flex justify-center mt-2">
+                    <ShimerUi height={15} width={150} />
+                  </p>
+                </div>
+              </div>
+              <div className="product-items mb-10">
+                <div className="product-all text-center">
+                  <div
+                    className="items-center rounded-full cursor-pointer flex justify-center relative"
+                    id="product-main"
+                  >
+                    <ShimerUi height={220} width={220} borderRadius={200} />
+                  </div>
+                  <p className="font-bold tracking-widest flex justify-center mt-2">
+                    <ShimerUi height={15} width={150} />
+                  </p>
+                </div>
+              </div>
+            </>
+          ) : (
+            productData.map((product) => (
+              <div className="product-items mb-10" key={product.prod_id}>
+                <div className="product-all text-center">
+                  <div
+                    className="items-center bg-productItemBg rounded-full cursor-pointer flex justify-center relative"
+                    id="product-main"
+                    onClick={() => {
+                      handleWatchProduct(product.title);
+                    }}
+                  >
+                    {product.image && (
                       <img
                         className="prod-img"
-                        src={require(`../../assets/image/upload/${product.image}`)}
+                        src={`./upload/${product.image}`}
                         alt="productImages"
                         width="100px"
                       />
-                    )
-                  )}
-                </div>
-                {isLoading ? (
-                  <ShimerUi height={20} width={100} />
-                ) : (
+                    )}
+                  </div>
                   <p className="font-bold tracking-widest">{product.title}</p>
-                )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
     </>

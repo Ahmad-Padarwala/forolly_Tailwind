@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import ShimerUi from "../../components/ShimerUi";
 import CKEditor from "react-ckeditor-component";
-import PORT from "../../../assets/constant/Url";
+const PORT = process.env.REACT_APP_MYURL;
 
 const AddProduct = () => {
   const [brandData, setBrandData] = useState([]);

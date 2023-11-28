@@ -53,7 +53,7 @@ export default function Navbar() {
                   Contact Us
                 </NavLink>
                 <a
-                  href={require("../../assets/catelogue/newpdf.pdf")}
+                  href="https://publuu.com/flip-book/313935/725511"
                   target="_blank"
                   rel="noreferrer noopener"
                   className="px-4 bg-white xl:left-28 lg:left-20  py-2 text-center inline-block relative rounded-full text-sm cate-btn"

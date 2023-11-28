@@ -9,7 +9,7 @@ const History = () => {
         style={{ backgroundImage: `url(${aboutBg})` }}
       >
         <div>
-          <h1 className="text-yellow lg:text-5xl md:text-5xl text-3xl font-bold tracking-wider">
+          <h1 className="text-yellow lg:text-5xl md:text-5xl text-3xl font-bold tracking-wider font-montserrat">
             Our History
           </h1>
           <p className="text-slate-200 lg:w-2/5 md:2/4 font-normal mt-6 leading-7 tracking-wide">

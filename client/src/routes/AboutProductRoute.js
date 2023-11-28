@@ -7,7 +7,7 @@ const AboutProductRoute = () => {
     <>
       <Routes>
         <Route
-          path="products/aboutproduct"
+          path="products/aboutproduct/:title"
           element={
             <>
               <AboutProduct />
