@@ -17,7 +17,7 @@ const Welcome = () => {
             <span className="border-red border-b border-b-4 pb-2">FO</span>
             ROLLY
           </p>
-          <p className="mt-7 leading-7">
+          <p className="mt-7 leading-7 text-justify">
             Chocolate and love go hand in hand – if you want to get on your
             loved one’s good side, feed them a steady supply of confectionery!
             In fact, a study by the Journal of Social and Personal Relationships

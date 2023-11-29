@@ -7,6 +7,7 @@ import HomeRoute from "./routes/HomeRoute";
 import AboutProductRoute from "./routes/AboutProductRoute";
 import DashRoute from "./routes/admin/DashRoute";
 import BrandRoute from "./routes/admin/BrandRoute";
+import TopSliderRoute from "./routes/admin/TopSliderRoute";
 import CategoryRoute from "./routes/admin/CategoryRoute";
 import ContactsRoute from "./routes/admin/ContactRoute";
 import InquiriesRoute from "./routes/admin/InquiriesRoute";
@@ -22,6 +23,7 @@ const App = () => {
       <InquiryRoute />
       <ContactRoute />
       <HomeRoute />
+      <TopSliderRoute />
       <AboutProductRoute />
       <DashRoute />
       <BrandRoute />

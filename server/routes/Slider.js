@@ -5,15 +5,10 @@ const Middleware = require("../controller/Middleware");
 const Slider = require("../controller/Slider");
 
 router
-  .route("/bot-slider")
+  .route("/slider")
   .get(Slider.getSlider)
   .post(Middleware.uploads.single("image"), Slider.addSlider);
 
-router.route("/bot-slider/:id").delete(Slider.deleteSlider);
-
-router
-  .route("/bot-slider/:id")
-  .get(Slider.getEditSlider)
-  .put(Slider.editSlider);
+router.route("/slider/:id").delete(Slider.deleteSlider);
 
 module.exports = router;

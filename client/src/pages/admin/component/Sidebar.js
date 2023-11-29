@@ -82,6 +82,18 @@ const Sidebar = () => {
           </div>
           <div
             className={`mb-2 cursor-pointer py-2 pl-3 pr-6 rounded-md ${
+              location.pathname === "/top-slider"
+                ? "bg-blue-500"
+                : "hover:bg-blue-500"
+            } transition-colors duration-300 flex items-center`}
+          >
+            <NavLink to="/top-slider">
+              <i className="fa-solid fa-magnifying-glass-chart"></i>
+              <span className="ml-3">Top Slider</span>
+            </NavLink>
+          </div>
+          <div
+            className={`mb-2 cursor-pointer py-2 pl-3 pr-6 rounded-md ${
               location.pathname === "/contacts"
                 ? "bg-blue-500"
                 : "hover:bg-blue-500"
@@ -93,7 +105,7 @@ const Sidebar = () => {
             </NavLink>
           </div>
           <div
-            className={`mb-40 cursor-pointer py-2 pl-3 pr-6 rounded-md ${
+            className={`mb-32 cursor-pointer py-2 pl-3 pr-6 rounded-md ${
               location.pathname === "/inquiries"
                 ? "bg-blue-500"
                 : "hover:bg-blue-500"

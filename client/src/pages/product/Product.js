@@ -40,10 +40,10 @@ const Product = () => {
           PRODUCTS
         </p>
         <p className="md:text-center text-justify">
-          Your content goes here. Edit or remove this text inline or in the
-          module Content settings. You can also style every aspect of this
-          content in the module Design settings and even apply custom CSS to
-          this text in the module Advanced settings
+          At Forolly Food, we believe in the purity of ingredients and the
+          perfection of craftsmanship. Our chocolates are created using the
+          finest cocoa beans and pure, natural ingredients, ensuring an
+          unparalleled chocolate experience.
         </p>
       </div>
 

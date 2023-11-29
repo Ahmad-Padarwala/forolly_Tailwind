@@ -66,10 +66,10 @@ const ViewProduct = () => {
       });
   };
 
-  const handleWatchProduct = (title) => {
+  const handleWatchProduct = async (title) => {
     // setProdId(title);
-    navigate(`/products/aboutproduct/${title}`);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    await window.scrollTo({ top: 0, behavior: "smooth" });
+    await navigate(`/products/aboutproduct/${title}`);
   };
 
   return (

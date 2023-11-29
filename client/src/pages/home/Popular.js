@@ -56,7 +56,7 @@ const Popular = () => {
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 pb-5 gap-5">
           {popularProduct.map((popular) => {
             return (
-              <div className="col-span-1">
+              <div className="col-span-1" key={popular.prod_id}>
                 <div
                   className="four-card-main pointer py-6 rounded-xl text-center cursor-pointer"
                   onClick={() => {

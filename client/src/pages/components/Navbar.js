@@ -52,14 +52,13 @@ export default function Navbar() {
                 <NavLink to="/contact" className="nav-link">
                   Contact Us
                 </NavLink>
-                <a
-                  href="https://publuu.com/flip-book/313935/725511"
-                  target="_blank"
+                <NavLink
+                  to="/view-catalogue"
                   rel="noreferrer noopener"
                   className="px-4 bg-white xl:left-28 lg:left-20  py-2 text-center inline-block relative rounded-full text-sm cate-btn"
                 >
                   View Catalogue
-                </a>
+                </NavLink>
               </div>
             </div>
             <button

@@ -38,7 +38,7 @@ const Service = () => {
                 </p>
               </div>
             </div>
-            <div className="w-full flex lg:w-1/3 md:w-1/2 gap-5 justify-center choose_us_section">
+            <div className="w-full flex lg:w-1/3 md:w-1/2 gap-5 lg:mb-0 md:mb-4 mb-0 justify-center choose_us_section">
               <div className="lg:text-6xl text-5xl choose-icons">
                 <i className="fas fa-shopping-bag"></i>
               </div>
@@ -71,7 +71,7 @@ const Service = () => {
           </div>
         </div>
         <div className="lg:mt-0 mt-5 md:col-span-6 col-span-12">
-          <div className="flex py-5 mt-0 md:mt-5 rounded-xl overflow-hidden px-4 card-main">
+          <div className="flex py-5 mt-0 lg:mt-5 rounded-xl overflow-hidden px-4 lg:ms-0 md:ms-1 ms-0 card-main">
             <div className="card-icon">
               <i className="fas fa-smile"></i>
             </div>
@@ -88,7 +88,7 @@ const Service = () => {
           </div>
         </div>
         <div className="lg:mt-0 mt-5 md:col-span-6 col-span-12">
-          <div className="flex py-5 mt-0 md:mt-5 rounded-xl overflow-hidden px-4 card-main">
+          <div className="flex py-5 mt-0 lg:mt-5 rounded-xl overflow-hidden px-4 card-main">
             <div className="card-icon">
               <i className="fas fa-gift"></i>
             </div>

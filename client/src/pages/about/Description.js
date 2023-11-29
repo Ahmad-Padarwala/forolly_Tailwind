@@ -10,7 +10,7 @@ const Description = () => {
         <div className="md:flex block mt-5">
           <div className="pt-4 pb-6 ps-3 bg-white">
             <p className="text-3xl font-bold tracking-wide mb-3">ABOUT US</p>
-            <p className="tracking-wide leading-7 md:w-4/5 w-11/12">
+            <p className="tracking-wide leading-7 md:w-4/5 w-11/12 text-justify">
               <strong>‘Forolly’</strong> offers us the chance to come nearer to
               the happiness of a kid’s grin and dreams by furnishing us with an
               approach to feel perpetually caught by the mysterious universe of
@@ -23,7 +23,7 @@ const Description = () => {
             <p className="text-3xl font-bold tracking-wide mb-3">
               🙂WE ARE THE BEST
             </p>
-            <p className="tracking-wide leading-7 md:w-4/5 w-11/12">
+            <p className="tracking-wide leading-7 md:w-4/5 w-11/12 text-justify">
               ‘Forolly’ offers us the chance to come nearer to the happiness of
               a kid’s grin and dreams by furnishing us with an approach to feel
               perpetually caught by the mysterious universe of adolescence and
@@ -36,7 +36,7 @@ const Description = () => {
 
         <div className="md:p-5 px-3 pb-2">
           <div>
-            <p>
+            <p className="text-justify">
               You can choose from a wide assortment of chocolates going from
               plain rich chocolates to nutty focuses, from crunches to seasoned
               rarities, from rich truffles to delicate caramels and a lot more

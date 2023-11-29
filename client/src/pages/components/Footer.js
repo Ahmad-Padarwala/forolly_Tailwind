@@ -17,26 +17,25 @@ const Footer = () => {
             Become a Distributor/Dealer
           </p>
           <p className="md:tracking-wider lg:leading-6 leading-none md:text-md text-md lg:px-36 md:px-20 px-5 text-gray-600 mb-2 footer_top_desc">
-            Your content goes here. Edit or remove this text inline or in the
-            module Content settings. You can also style every aspect of this
-            content in the module Design settings and even apply custom CSS to
-            this text in the module Advanced settings.
+            Are you passionate about spreading the joy of delicious chocolates?
+            Do you have a knack for business and want to be a part of a thriving
+            chocolate community? Look no further! Forolly Food welcomes you to
+            become a distributor or dealer and join our chocolate family.
           </p>
           <div>
             <NavLink
               to="/inquiry"
-              className="footer-btn text-sm tracking-wider relative inline-block rounded-full font-bold lg:w-44 w-36 py-2.5 md:mr-5 mr-2"
+              className="footer-btn text-sm tracking-wider relative inline-block rounded-full font-bold lg:w-44 w-40 py-2.5 md:mr-5 mr-2"
             >
               Dealer Inquiry
             </NavLink>
-            <a
-              href={require("../../assets/catelogue/newpdf.pdf")}
-              target="_blank"
+            <NavLink
+              to="/view-catalogue"
               rel="noreferrer noopener"
-              className="footer-btn text-sm tracking-wider relative inline-block rounded-full font-bold lg:w-44 w-36 py-2.5 mt-6"
+              className="footer-btn text-sm tracking-wider relative inline-block rounded-full font-bold lg:w-44 w-40 py-2.5 mt-6"
             >
               View Catalogue
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>
@@ -51,7 +50,7 @@ const Footer = () => {
                 width="130px"
                 height="auto"
               />
-              <p className="my-4 pe-5 text-white tracking-wider">
+              <p className="my-4 pe-5 text-white tracking-wider text-justify">
                 The mission of the ‘Forolly’ is to give youth candy
                 recollections, for example, a way that it celebrates God and His
                 arrangement for our lives. Our objective for each candy arrange
@@ -84,7 +83,7 @@ const Footer = () => {
               </span>
             </div>
 
-            <div className="mb-md-0 mb-4 lg:w-2/5 md:w-2/5 sm:w-2/5 w-full text-sm lg:ps-16 md:ps-16 ps-7 lg:pt-9 pt-2">
+            <div className="mb-md-0 mb-4 lg:w-2/5 md:w-2/5 sm:w-2/5 w-full text-sm lg:ps-16 md:ps-16 ps-7 lg:pt-9 md:pt-9 pt-2">
               <p className="text-white text-2xl tracking-wider lg:pb-12 pb-7">
                 <span className="border-b-2 border-white pb-4">Links</span>
               </p>
@@ -117,7 +116,7 @@ const Footer = () => {
           </div>
 
           <div className="md:flex block lg:w-7/12 w-full">
-            <div className="lg:w-6/12 md:w-6/12 w-full lg:ps-0 sm:ps-16 md:ps-16 ps-7 mb-4 lg:pt-9 pt-2">
+            <div className="lg:w-6/12 md:w-6/12 w-full lg:ps-0 sm:ps-16 md:ps-16 ps-7 mb-4 lg:pt-9 md:pt-9 pt-2">
               <p className="text-white text-2xl tracking-wider lg:pb-12 pb-7">
                 <span className="border-b-2 border-white pb-4">Cont</span>act Us
               </p>
@@ -138,7 +137,9 @@ const Footer = () => {
                   <i className="fa-solid fa-phone"></i>
                 </div>
                 <div className="ps-4">
-                  <p className="tracking-wider pe-5 mt-3">+91 95102 70600</p>
+                  <p className="tracking-wider pe-5 mt-3">
+                    <NavLink to="tel:+9195102 70600">+91 95102 70600</NavLink>
+                  </p>
                 </div>
               </div>
               <div className="text-white flex mb-4">
@@ -147,24 +148,26 @@ const Footer = () => {
                 </div>
                 <div className="ps-4">
                   <p className="tracking-wider pe-5 mt-3">
-                    support@forollyfood.com
+                    <NavLink to="mailto:support@forollyfood.com">
+                      support@forollyfood.com
+                    </NavLink>
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="w-6/12 pe-16 lg:ps-6 md:ps-6 sm:ps-16 ps-7 lg:pt-9 pt-2">
+            <div className="w-6/12 pe-16 lg:ps-6 md:ps-6 sm:ps-16 ps-7 lg:pt-9 md:pt-9 pt-2 lg:mb-0 mb-9">
               <div className="bg-white lg:w-64 w-72 py-6 rounded-2xl text-center">
                 <p className="text-2xl tracking-wider leading-6 mb-4 px-2 font-semibold">
                   Subscribe for hot updates
                 </p>
                 <input
-                  className="border border-inherit rounded-md py-1.5 ps-2 border-black mb-4"
+                  className="border border-inherit rounded-md py-1.5 ps-2 border-black mb-4 w-11/12"
                   type="text"
                   placeholder="Enter Name"
                 />
                 <input
-                  className="border border-inherit rounded-md py-1.5 ps-2 border-black mb-4"
+                  className="border border-inherit rounded-md py-1.5 ps-2 border-black mb-4 w-11/12"
                   type="text"
                   placeholder="Enter Email"
                 />

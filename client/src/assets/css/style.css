@@ -33,6 +33,12 @@ input::placeholder {
   .form-main {
     padding: 0px 30px;
   }
+  .cate-btn {
+    left: 13px;
+  }
+  .contact-paragraph {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 430px) {
   .form-main {
@@ -40,6 +46,9 @@ input::placeholder {
   }
   .form-outer {
     padding: 50px 20px;
+  }
+  .slider_section {
+    max-height: 250px !important;
   }
 }
 
@@ -57,11 +66,6 @@ input::placeholder {
 }
 .btn-form-contact-page {
   background-color: #901418;
-}
-@media screen and (max-width: 768px) {
-  .contact-paragraph {
-    width: 100%;
-  }
 }
 
 /* SHIMUER UI COMPONENT */
@@ -131,6 +135,11 @@ input::placeholder {
 }
 
 /* top home page slider */
+.slider_section {
+  position: relative;
+  max-height: 430px;
+  overflow: hidden;
+}
 .slide {
   width: 100%;
   transition: opacity 0.3s ease-in-out;
@@ -141,7 +150,7 @@ input::placeholder {
 .arrow {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 45%;
   color: black;
   padding: 8px 19px;
   border-radius: 50%;
@@ -150,7 +159,5 @@ input::placeholder {
 }
 
 .next {
-  position: absolute;
-  top: 50%;
   right: 0;
 }

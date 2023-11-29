@@ -15,11 +15,12 @@ const Welcome = () => {
             <span className="border-red border-b border-b-2 pb-2">FO</span>
             ROLLY
           </p>
-          <p className="md:w-8/12 mt-10 leading-7">
-            <span className="font-semibold">‘Forolly’</span> was established in
-            Nov 2020. From the snapshot of its creation, the organization put
-            the majority of its undertakings to lead the best portrayal of the
-            brand <span className="font-semibold">‘Forolly’</span> on the Indian
+          <p className="md:w-8/12 mt-10 leading-7 text-justify">
+            <span className="font-semibold">‘Forolly’</span> was
+            established in Nov 2020. From the snapshot of its creation, the
+            organization put the majority of its undertakings to lead the best
+            portrayal of the brand{" "}
+            <span className="font-semibold">‘Forolly’</span> on the Indian
             market. After the essential exercises to promote the
             <span className="font-semibold"> ‘Forolly’</span> mark in different
             States, the group focused on building a methodology for perhaps the

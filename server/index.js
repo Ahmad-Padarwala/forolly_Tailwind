@@ -11,7 +11,6 @@ const User_Route = require("./routes/User");
 const Nutrition_Route = require("./routes/Nutrition");
 const Contact_Route = require("./routes/Contact");
 const Inquiry_Route = require("./routes/Inquiry");
-
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
@@ -33,5 +32,3 @@ app.use("/", Inquiry_Route);
 app.listen(PORT, () => {
   console.log(`Server Listening on port ${PORT}`);
 });
-
-//you can change port number form config.js in server folder

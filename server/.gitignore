@@ -7,3 +7,5 @@
 
 # production
 /build
+.env
+./config/config.js
