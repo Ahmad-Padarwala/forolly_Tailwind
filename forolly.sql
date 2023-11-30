@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2023 at 12:15 PM
+-- Generation Time: Nov 30, 2023 at 07:11 AM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,17 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bot_slider`
---
-
-CREATE TABLE `bot_slider` (
-  `id` int(11) NOT NULL,
-  `image` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `brand`
 --
 
@@ -43,13 +32,6 @@ CREATE TABLE `brand` (
   `name` varchar(200) NOT NULL,
   `image` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `brand`
---
-
-INSERT INTO `brand` (`brand_id`, `name`, `image`) VALUES
-(1, 'Forolly', 'image_1693131006428_logo.webp');
 
 -- --------------------------------------------------------
 
@@ -63,13 +45,6 @@ CREATE TABLE `category` (
   `description` varchar(3000) NOT NULL,
   `image` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `category`
---
-
-INSERT INTO `category` (`cate_id`, `name`, `description`, `image`) VALUES
-(1, 'Category1', 'This is a first category', 'image_1693131051026_bottom-slider1.webp');
 
 -- --------------------------------------------------------
 
@@ -126,6 +101,13 @@ CREATE TABLE `nutrition` (
   `protien` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `nutrition`
+--
+
+INSERT INTO `nutrition` (`nutr_id`, `prod_id`, `energy`, `total_fat`, `saturated_fat`, `trans_fat`, `cholesterol`, `sodium`, `total_carbohydrates`, `protien`) VALUES
+(1, 3, 'cdsc', 'sdcsd', 'sdc', 'sdc', 'sdcsd', 'csd', 'cdsc', 'cdscsd');
+
 -- --------------------------------------------------------
 
 --
@@ -145,12 +127,23 @@ CREATE TABLE `product` (
   `popular` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `product`
+-- Table structure for table `top_slider`
 --
 
-INSERT INTO `product` (`prod_id`, `brand_id`, `cate_id`, `title`, `short_desc`, `long_desc`, `image`, `status`, `slider`, `popular`) VALUES
-(1, 1, 1, 'Cherry Merry', '<p><strong>INGREDIENTS:</strong>&nbsp;SUGAR, LIQUID GLUCOSE, EDIBLE VEGETABLE FAT,<br />\r\nMILK SOLIDS, EDIBLE COMMON SALT, EMULSIFIERS (322, 471),<br />\r\nACIDITY REGULATOR (E 296). CONTAINS PERMITTED SYNTHETIC<br />\r\nFOOD COLOURS (INS 124, INS 171) AND ADDED FLAVOURS (NATURE-<br />\r\nIDENTICAL FLAVOURING SUBSTANCES&ndash;CHERRY &amp; MILK).<br />\r\nALLERGY INFORMATION: CONTAINS MILK AND SOYA.<br />\r\n&nbsp;</p>\r\n\r\n<p><strong>Net Weight</strong>&nbsp;: 130g<br />\r\n<strong>MRP</strong>&nbsp;: 50</p>\r\n', '', 'image_1693131186375_image_1691494143164image_1689608150275products12.webp', 1, 0, 0);
+CREATE TABLE `top_slider` (
+  `id` int(11) NOT NULL,
+  `image` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `top_slider`
+--
+
+INSERT INTO `top_slider` (`id`, `image`) VALUES
+(15, 'image_1701243002396_card4.webp');
 
 -- --------------------------------------------------------
 
@@ -174,12 +167,6 @@ INSERT INTO `user` (`id`, `uname`, `password`) VALUES
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `bot_slider`
---
-ALTER TABLE `bot_slider`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brand`
@@ -218,6 +205,12 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`prod_id`);
 
 --
+-- Indexes for table `top_slider`
+--
+ALTER TABLE `top_slider`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -228,28 +221,22 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `bot_slider`
---
-ALTER TABLE `bot_slider`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `inquiry`
@@ -261,13 +248,19 @@ ALTER TABLE `inquiry`
 -- AUTO_INCREMENT for table `nutrition`
 --
 ALTER TABLE `nutrition`
-  MODIFY `nutr_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `nutr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `top_slider`
+--
+ALTER TABLE `top_slider`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `user`
