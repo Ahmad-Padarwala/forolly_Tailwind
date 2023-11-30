@@ -152,12 +152,15 @@ input::placeholder {
   position: absolute;
   top: 45%;
   color: black;
-  padding: 8px 19px;
+  padding: 0px 10px;
   border-radius: 50%;
-  font-size: 25px;
+  font-size: 20px;
+  background-color: white;
   font-weight: bold;
 }
-
+.prev {
+  left: 10px;
+}
 .next {
-  right: 0;
+  right: 10px;
 }
